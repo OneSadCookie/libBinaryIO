@@ -45,6 +45,8 @@ typedef double             float64_t;
 #ifndef BinIO_BYTE_ORDER
     #if defined(__ppc__) || defined(__POWERPC__)
         #define BinIO_BYTE_ORDER BinIO_BIG_ENDIAN_BYTE_ORDER
+    #elif defined(__i386__)
+        #define BinIO_BYTE_ORDER BinIO_LITTLE_ENDIAN_BYTE_ORDER
     #else
         #warning unknown architecture; making assumptions
         #define BinIO_BYTE_ORDER BinIO_LITTLE_ENDIAN_BYTE_ORDER
